@@ -50,4 +50,36 @@ root.iconbitmap(r'sim.ico')
 
 
 text = Label(root, text="Let's make some noise!")
+text.pack()
 
+
+def stop_music():
+    mixer.music.stop()
+    statusbar['text'] = "Music Stopped"
+
+
+def pause_music():
+    global paused
+    paused = True
+    mixer.music.pause()
+    statusbar['text'] = "Music Paused"
+
+
+def set_vol(val):
+    volume = int(val)/100
+    mixer.music.set_volume(volume)
+
+
+playPhoto = PhotoImage(file='play.png')
+playBtn = Button(root, image=playPhoto, command=play_music)
+playBtn.pack()
+
+
+stopPhoto = PhotoImage(file='stop.png')
+stopBtn = Button(root, image=stopPhoto, command=stop_music)
+stopBtn.pack()
+
+
+pausePhoto = PhotoImage(file='pause.png')
+pauseBtn = Button(root, image=pausePhoto, command=pause_music)
+pauseBtn.pack()
