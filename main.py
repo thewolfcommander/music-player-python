@@ -39,14 +39,13 @@ def about_us():
 subMenu = Menu(menubar, tearoff=0)
 
 menubar.add_cascade(label="Help", menu=subMenu)
-subMenu.add_command(label="About Us"), command=about_us)
+subMenu.add_command(label="About Us", command=about_us)
 
 # Initializing the mixer
 mixer.init()
 
 root.geometry('300x300')
 root.title('Sim')
-root.iconbitmap(r'sim.ico')
 
 
 text = Label(root, text="Let's make some noise!")
@@ -56,6 +55,10 @@ text.pack()
 def stop_music():
     mixer.music.stop()
     statusbar['text'] = "Music Stopped"
+
+def play_music():
+    mixer.music.play()
+    statusbar['text'] = "Music Playing"
 
 
 def pause_music():
