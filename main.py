@@ -83,3 +83,14 @@ stopBtn.pack()
 pausePhoto = PhotoImage(file='pause.png')
 pauseBtn = Button(root, image=pausePhoto, command=pause_music)
 pauseBtn.pack()
+
+
+scale = Scale(root, from_=0, to=100, orient=HORIZONTAL, command=set_vol)
+scale.set(70)
+mixer.music.set_volume(0.7)
+scale.pack()
+
+statusbar = Label(root, text="Welcome to Sim", relief=SUNKEN, anchor=W)
+statusbar.pack(side=BOTTOM, fill=X)
+
+root.mainloop()
