@@ -40,3 +40,14 @@ subMenu = Menu(menubar, tearoff=0)
 
 menubar.add_cascade(label="Help", menu=subMenu)
 subMenu.add_command(label="About Us"), command=about_us)
+
+# Initializing the mixer
+mixer.init()
+
+root.geometry('300x300')
+root.title('Sim')
+root.iconbitmap(r'sim.ico')
+
+
+text = Label(root, text="Let's make some noise!")
+
